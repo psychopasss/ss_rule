@@ -1,0 +1,13 @@
+#!url=https://github.com/psychopasss/ss_rule/raw/main/Shadownrocket/module/gamerskyAd.module
+#!name=游民星空app去广告
+#!desc=去开屏广告，列表广告
+
+[URL Rewrite]
+^http:\/\/.*getAdAtLaunchView.* - REJECT
+^http:\/\/.*ad-app-package.* - REJECT
+^.*pglstatp-toutiao.com.* - REJECT
+^.*getAdInPostPageBottom.* - REJECT
+^.*adservice.* - REJECT
+
+[MITM]
+hostname = %APPEND% *.gamersky.com,*.pglstatp-toutiao.com,*.adservice.*
