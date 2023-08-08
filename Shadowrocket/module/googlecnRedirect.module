@@ -2,7 +2,6 @@
 #!name=Google重定向
 #!desc=解决Safari多点一次Google的问题
 
-
 [URL Rewrite]
 ^https?://(www.)?g.cn https://www.google.com 302
 ^https?://(www.)?google.cn https://www.google.com 302
