@@ -3,13 +3,15 @@ desc: 去开屏广告，列表广告
 
 http:
   url-rewrite:
-    - ^http://.*getAdAtLaunchView.* - REJECT
-    - ^http://.*ad-app-package.* - REJECT
-    - ^.*pglstatp-toutiao.com.* - REJECT
+    - ^.*getAdAtLaunchView.* - REJECT
+    - ^.*pglstatp-toutiao.* - REJECT
+    - ^.*pangolin-sdk-toutiao.* - REJECT
     - ^.*getAdInPostPageBottom.* - REJECT
     - ^.*adservice.* - REJECT
+    - ^.*statisticAd.* - REJECT
 
   mitm:
     - "*.gamersky.com"
-    - "*.pglstatp-toutiao.com"
-    - "*.adservice.*"
+    - "*pglstatp-toutiao*"
+    - "*pangolin-sdk-toutiao*"
+    - "adservice.adtroop.cn"
