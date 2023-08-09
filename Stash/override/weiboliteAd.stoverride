@@ -28,14 +28,14 @@ http:
       require-body: true
 
   force-http-engine:
-    - api.weibo.cn:443
-    - *.api.weibo.cn:443
-    - sdkapp.uve.weibo.com:443
+    - "api.weibo.cn:443"
+    - "*.api.weibo.cn:443"
+    - "sdkapp.uve.weibo.com:443"
 
   mitm:
-    - api.weibo.cn
-    - *.api.weibo.cn
-    - sdkapp.uve.weibo.com
+    - "api.weibo.cn"
+    - "*.api.weibo.cn"
+    - "sdkapp.uve.weibo.com"
 
 script-providers:
   微博国际版_趋势tab去广告:
