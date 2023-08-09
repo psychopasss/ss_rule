@@ -8,5 +8,5 @@ http:
     - ^https?://(www.)?google.cn https://www.google.com 302
 
   mitm:
-    - *.google.cn
+    - "*.google.cn"
     - www.g.cn

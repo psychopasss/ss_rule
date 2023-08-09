@@ -11,6 +11,6 @@ http:
     - ^.*adservice.* - REJECT
 
   mitm:
-    - *.gamersky.com
-    - *.pglstatp-toutiao.com
-    - *.adservice.*
+    - "*.gamersky.com"
+    - "*.pglstatp-toutiao.com"
+    - "*.adservice.*"
