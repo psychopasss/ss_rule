@@ -9,7 +9,7 @@ http:
     - ^.*getAdInPostPageBottom.* - REJECT
     - ^.*adservice.* - REJECT
     - ^.*statisticAd.* - REJECT
-  
+
   force-http-engine:
     - "*.gamersky.com:443"
     - "*pglstatp-toutiao*:443"
