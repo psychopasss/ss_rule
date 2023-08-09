@@ -35,5 +35,5 @@ http:
 script-providers:
   微博国际版_趋势tab去广告:
     # url: https://raw.githubusercontent.com/deezertidal/private/master/js-backup/Script/weibo_json.js
-    url: https://raw.githubusercontent.com/STASH-NETWORKS-LIMITED/stash-example/main/script/iOS15_Weather_AQI_Standard.js
+    url: https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js 
     interval: 86400
