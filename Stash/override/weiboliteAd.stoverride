@@ -27,13 +27,18 @@ http:
       type: response
       require-body: true
 
+  force-http-engine:
+    - api.weibo.cn:443
+    - *.api.weibo.cn:443
+    - sdkapp.uve.weibo.com:443
+
   mitm:
     - api.weibo.cn
-    - "*.api.weibo.cn"
+    - *.api.weibo.cn
     - sdkapp.uve.weibo.com
 
 script-providers:
   微博国际版_趋势tab去广告:
     # url: https://raw.githubusercontent.com/deezertidal/private/master/js-backup/Script/weibo_json.js
-    url: https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js 
+    url: https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js
     interval: 86400

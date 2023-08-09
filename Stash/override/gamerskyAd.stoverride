@@ -2,6 +2,12 @@ name: 游民星空app去广告
 desc: 去开屏广告，列表广告
 
 http:
+  force-http-engine:
+    - *.gamersky.com:443
+    - *pglstatp-toutiao*:443
+    - *pangolin-sdk-toutiao*:443
+    - adservice.adtroop.cn:443
+
   url-rewrite:
     - ^.*getAdAtLaunchView.* - REJECT
     - ^.*pglstatp-toutiao.* - REJECT
@@ -11,7 +17,7 @@ http:
     - ^.*statisticAd.* - REJECT
 
   mitm:
-    - "*.gamersky.com"
-    - "*pglstatp-toutiao*"
-    - "*pangolin-sdk-toutiao*"
-    - "adservice.adtroop.cn"
+    - *.gamersky.com
+    - *pglstatp-toutiao*
+    - *pangolin-sdk-toutiao*
+    - adservice.adtroop.cn
