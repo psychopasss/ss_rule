@@ -1,4 +1,4 @@
-url: https://github.com/psychopasss/ss_rule/raw/main/Stash/override/googlecnRedirect.stoverride
+#SUBSCRIBED https://github.com/psychopasss/ss_rule/raw/main/Stash/override/googlecnRedirect.stoverride
 name: Google重定向
 desc: 解决Safari多点一次Google的问题
 
