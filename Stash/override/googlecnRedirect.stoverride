@@ -1,0 +1,12 @@
+url: https://github.com/psychopasss/ss_rule/raw/main/Stash/override/googlecnRedirect.stoverride
+name: Google重定向
+desc: 解决Safari多点一次Google的问题
+
+http:
+  url-rewrite:
+    - ^https?://(www.)?g.cn https://www.google.com 302
+    - ^https?://(www.)?google.cn https://www.google.com 302
+
+  mitm:
+    - *.google.cn
+    - www.g.cn

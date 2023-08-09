@@ -1,3 +1,3 @@
 # ss_rule
 
-自用各种软件的模块
+目前只有 shadowrocket 模块、stash 覆写
