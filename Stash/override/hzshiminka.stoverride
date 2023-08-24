@@ -5,6 +5,7 @@ http:
   url-rewrite:
     # 出行码页面底部广告
     - ^https?://smkmp\.96225\.com/smkoperate/bid/1\.0\.0/getBidResource - reject
+    - ^https?://taichu\.96225\.com/showcase/changeGoods - reject
 
   script:
     - match: ^https?://taichu\.96225\.com/showcase/findPage

@@ -31,15 +31,13 @@ function clearHome(data) {
 		return data;
 	}
 	//删除惠民汇金、本地生活栏目
-	//删除不掉, 程序默认写死了两个按钮
-	// data.data.pageconfig = data.data.pageconfig.filter(function (item) {
-	// 	for (const pagecode of removePagecode) {
-	// 		if (item.pagecode == pagecode) {
-	// 			return true;
-	// 		}
-	// 	}
-	// 	return true;
-	// });
+	//删不掉, 程序默认写死了两个按钮
+	//替换金融按钮链接为空
+	for (const item of data.data.pageconfig) {
+		if (item.pagecode == 'TR3123') {
+			item.linkUrl = '';
+		}
+	}
 
 	//删除扫一扫下面的广告位
 	for (const tempStand of data.data.stands) {
