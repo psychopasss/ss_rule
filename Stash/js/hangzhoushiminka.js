@@ -10,7 +10,7 @@ const removePagecode = ['TR3123', 'FR1238'];
 function getModifyMethod(url, requestBody) {
 	for (const s of modifyCardsUrls) {
 		if (url.indexOf(s) > -1) {
-			if (!requestBody) {
+			if (requestBody) {
 				let pageCode = requestBody.pagecode
 				if (pageCode == 'launch') {
 					return 'clearLaunch';
@@ -46,6 +46,7 @@ function clearHome(data) {
 }
 
 function clearLaunch() {
+	console.log('返回404');
 	$done({ status: '404' });
 }
 
