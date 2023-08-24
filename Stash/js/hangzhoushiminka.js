@@ -14,7 +14,7 @@ function getModifyMethod(url, requestBody) {
 			console.log('requestBody='+JSON.stringify(requestBody))
 			if (requestBody) {
 				let pageCode = requestBody.pagecode
-				console.log('pageCode=' + pageCode);
+				console.log('pageCode=' + requestBody.pagecode);
 				if (pageCode == 'launch') {
 					return 'clearLaunch';
 				} else if (pageCode == 'home') {
