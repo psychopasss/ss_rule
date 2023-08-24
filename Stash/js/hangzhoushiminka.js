@@ -13,6 +13,7 @@ function getModifyMethod(url, requestBody) {
 			console.log('111');
 			if (requestBody) {
 				let pageCode = requestBody.pagecode
+				console.log('111',pageCode);
 				if (pageCode == 'launch') {
 					return 'clearLaunch';
 				} else if (pageCode == 'home') {
