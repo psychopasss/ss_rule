@@ -31,7 +31,7 @@ function clearHome(data) {
 		return data;
 	}
 	//删除惠民汇金、本地生活栏目
-	data.pageconfig = data.pageconfig.filter(function (item) {
+	data.data.pageconfig = data.data.pageconfig.filter(function (item) {
 		for (const pagecode of removePagecode) {
 			if (item.pagecode == pagecode) {
 				return false;
@@ -41,7 +41,7 @@ function clearHome(data) {
 	});
 
 	//删除扫一扫下面的广告位
-	for (const tempStand of data.stands) {
+	for (const tempStand of data.data.stands) {
 		if (tempStand.standcode == 1016 || tempStand.standcode == 1007 || tempStand.standcode == 1005 || tempStand.standcode == 1001 || tempStand.standcode == 1002 || tempStand.standcode == 1029) {
 			tempStand.substands = [];
 		}
