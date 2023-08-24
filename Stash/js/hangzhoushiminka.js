@@ -31,19 +31,27 @@ function clearHome(data) {
 		return data;
 	}
 	//删除惠民汇金、本地生活栏目
-	data.data.pageconfig = data.data.pageconfig.filter(function (item) {
-		for (const pagecode of removePagecode) {
-			if (item.pagecode == pagecode) {
-				return false;
-			}
-		}
-		return true;
-	});
+	//删除不掉, 程序默认写死了两个按钮
+	// data.data.pageconfig = data.data.pageconfig.filter(function (item) {
+	// 	for (const pagecode of removePagecode) {
+	// 		if (item.pagecode == pagecode) {
+	// 			return true;
+	// 		}
+	// 	}
+	// 	return true;
+	// });
 
 	//删除扫一扫下面的广告位
 	for (const tempStand of data.data.stands) {
-		if (tempStand.standcode == 1016 || tempStand.standcode == 1007 || tempStand.standcode == 1005 || tempStand.standcode == 1001 || tempStand.standcode == 1002 || tempStand.standcode == 1029) {
+		let standcode = tempStand.standcode;
+		if (standcode == 1016 || standcode == 1007 || standcode == 1002) {
 			tempStand.substands = [];
+		}
+		if (standcode == 1001 || standcode == 1005 || standcode == 1029) {
+			tempStand.applys = [];
+		}
+		if (standcode == 1022) {
+			tempStand.config = {}
 		}
 	}
 }
