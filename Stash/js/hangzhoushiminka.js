@@ -11,10 +11,10 @@ function getModifyMethod(url, requestBody) {
 	for (const s of modifyCardsUrls) {
 		if (url.indexOf(s) > -1) {
 			console.log('开始处理=' + s);
-			console.log('requestBody='+JSON.stringify(requestBody))
+			console.log('requestBody=' + JSON.stringify(requestBody))
 			if (requestBody) {
 				let pageCode = requestBody.pagecode
-				console.log('pageCode=' + requestBody.pagecode);
+				console.log('pageCode=' + pageCode);
 				if (pageCode == 'launch') {
 					return 'clearLaunch';
 				} else if (pageCode == 'home') {
@@ -56,11 +56,19 @@ function clearLaunch() {
 var body = $response.body;
 var url = $request.url;
 var requestBody = $request.body;
+if (requestBody) {
+	requestBody = JSON.parse($request.body);
+}
+
 let method = getModifyMethod(url, requestBody);
+
 if (method) {
 	var func = eval(method);
-	let data = JSON.parse(body);
-	new func(data);
-	body = JSON.stringify(data);
+	if (body) {
+		let data = JSON.parse(body);
+		new func(data);
+		body = JSON.stringify(data);
+	}
 }
+
 $done({ body: body });
