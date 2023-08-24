@@ -23,4 +23,4 @@ http:
 script-providers:
   adRemoveJs:
     url: https://raw.githubusercontent.com/psychopasss/ss_rule/main/Stash/js/hangzhoushiminka.js
-    interval: 10
+    interval: 43200
