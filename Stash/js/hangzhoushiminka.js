@@ -17,7 +17,7 @@ function getModifyMethod(url, requestBody) {
 				console.log('pageCode=' + pageCode);
 				if (pageCode == 'launch') {
 					return 'clearLaunch';
-				} else if (pageCode == 'home') {
+				} else if (pageCode == 'home' || pageCode == 'mine') {
 					return 'clearHome';
 				}
 			}
@@ -39,7 +39,7 @@ function clearHome(data) {
 		}
 	}
 
-	//删除扫一扫下面的广告位
+	//删除扫一扫下面的广告位, 以及我的页面广告
 	for (const tempStand of data.data.stands) {
 		let standcode = tempStand.standcode;
 		if (standcode == 1016 || standcode == 1007 || standcode == 1002) {
