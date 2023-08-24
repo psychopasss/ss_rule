@@ -1,0 +1,17 @@
+name: Emby Unlock
+desc: 解锁Emby会员功能, 无通知
+
+http:
+  mitm:
+    - mb3admin.com
+  script:
+    - match: ^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice
+      name: EmbyUnlock
+      type: response
+      require-body: true
+      timeout: 10
+
+script-providers:
+  EmbyUnlock:
+    url: https://raw.githubusercontent.com/psychopasss/ss_rule/main/Stash/js/embyunlock.js
+    interval: 86400
