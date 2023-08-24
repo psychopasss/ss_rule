@@ -10,6 +10,7 @@ const removePagecode = ['TR3123', 'FR1238'];
 function getModifyMethod(url, requestBody) {
 	for (const s of modifyCardsUrls) {
 		if (url.indexOf(s) > -1) {
+			console.log('111');
 			if (requestBody) {
 				let pageCode = requestBody.pagecode
 				if (pageCode == 'launch') {
