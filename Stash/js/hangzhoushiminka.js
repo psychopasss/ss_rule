@@ -22,39 +22,6 @@ function getModifyMethod(url, requestBody) {
 	}
 	return null;
 }
-function removeTopics(data) {
-	if (!data.data) {
-		return data;
-	}
-	//if(data.data.search_topic) {delete data.data.search_topic;}
-	if (data.data.topics) { delete data.data.topics; }
-	if (data.data.discover) { delete data.data.discover; }
-
-	return data;
-}
-function isAd(data) {
-	if (!data) {
-		return false;
-	}
-	if (data.mblogtypename == '广告' || data.mblogtypename == '热推') { return true };
-	if (data.mblogtypename == '廣告' || data.mblogtypename == '熱推') { return true };
-	if (data.promotion && data.promotion.type == 'ad') { return true };
-	return false;
-}
-
-function isBlock(data) {
-	let blockIds = mainConfig.blockIds || [];
-	if (blockIds.length === 0) {
-		return false;
-	}
-	let uid = data.user.id;
-	for (const blockId of blockIds) {
-		if (blockId == uid) {
-			return true;
-		}
-	}
-	return false;
-}
 
 function clearHome(data) {
 	if (!data.data) {
