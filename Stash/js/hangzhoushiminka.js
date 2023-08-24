@@ -32,10 +32,10 @@ function clearHome(data) {
 	}
 	//删除惠民汇金、本地生活栏目
 	//删不掉, 程序默认写死了两个按钮
-	//替换金融按钮链接为空
+	//替换金融按钮链接为首页
 	for (const item of data.data.pageconfig) {
 		if (item.pagecode == 'TR3123') {
-			item.linkUrl = '';
+			item.linkUrl = 'jtapp://page/home';
 		}
 	}
 
