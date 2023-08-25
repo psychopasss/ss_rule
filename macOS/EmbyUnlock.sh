@@ -21,12 +21,19 @@ reject='var status=(response||{}).status;return console.log("getRegistrationInfo
 
 embyVersion=`cat /Applications/Emby.app/Contents/Info.plist | grep -A1 CFBundleShortVersionString | grep string | sed 's/<[^>]*>//g' | sed 's/\t//g'`
 
-if [ "$embyVersion" > '2.1.99' ]; then
+echo -e "当前 Emby 版本: $embyVersion"
+
+if [[ "$embyVersion" > '2.1.99' && "$embyVersion" < '2.2.11' ]]; then
      echo -e "当前 Emby 版本大于2.2.0，使用新代码匹配"
      reject='var status=(response||{}).status;if(console.log("getRegistrationInfo response: "+status),status&&status<500&&appStorage.setItem(cacheKey,JSON.stringify({lastValidDate:-1,deviceId:params.deviceId,cacheExpirationDays:0,lastUpdated:Date.now()})),403===status)return Promise.reject("overlimit");if(status&&status<500)return Promise.reject();status=response;if(console.log("getRegistrationInfo failed: "+status),regCacheValid)return console.log("getRegistrationInfo returning cached info"),Promise.resolve();throw status'
 fi
 
-resolve='return appStorage.setItem(cacheKey,JSON.stringify({lastValidDate:Date.now(),deviceId:params.deviceId,cacheExpirationDays:999})),Promise.resolve()'
+if [ "$embyVersion" > '2.2.10' ]; then
+    echo -e "当前 Emby 版本大于2.2.10，使用新代码匹配"
+    reject='var status=(response||{}).status;if(console.log("getRegistrationInfo response: "+status),status&&status<500&&_servicelocator.appStorage.setItem(cacheKey,JSON.stringify({lastValidDate:-1,deviceId:params.deviceId,cacheExpirationDays:0,lastUpdated:Date.now()})),403===status)return Promise.reject("overlimit");if(status&&status<500)return Promise.reject();status=response;if(console.log("getRegistrationInfo failed: "+status),regCacheValid)return console.log("getRegistrationInfo returning cached info"),Promise.resolve();throw status'
+fi
+
+resolve='return _servicelocator.appStorage.setItem(cacheKey,JSON.stringify({lastValidDate:Date.now(),deviceId:params.deviceId,cacheExpirationDays:999})),Promise.resolve()'
 
 sudo sed -i "" "s/$reject/$resolve/" $ConnectionManagerFile
 
