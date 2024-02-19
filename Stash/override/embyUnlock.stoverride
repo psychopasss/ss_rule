@@ -16,4 +16,4 @@ http:
 script-providers:
   EmbyUnlock:
     url: https://raw.githubusercontent.com/psychopasss/ss_rule/main/Stash/js/embyunlock.js
-    interval: 8600
+    interval: 10
