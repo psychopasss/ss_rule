@@ -3,7 +3,7 @@ if ($request.url.indexOf('mb3admin.com/admin/service/registration/validateDevice
         $done({
             status: 200,
             headers: $response.headers,
-            body: '{"cacheExpirationDays": 365,"message": "Device Valid","resultCode": "GOOD"}'
+            body: '{"cacheExpirationDays":365,"resultCode":"GOOD","message":"Device Valid"}'
         })
 } else if ($request.url.indexOf('mb3admin.com/admin/service/registration/getStatus') != -1) {
     $done({
