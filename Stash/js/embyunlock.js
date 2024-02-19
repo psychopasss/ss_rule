@@ -1,14 +1,10 @@
 if ($request.url.indexOf('mb3admin.com/admin/service/registration/validateDevice') != -1) {
-    if ($response.status != 200) {
         $notification.post("Done","Success","Emby Premiere Unlocked!");
         $done({
             status: 200,
             headers: $response.headers,
-            body: '{"cacheExpirationDays":365,"resultCode":"GOOD","message":"Device Valid"}'
+            body: '{"cacheExpirationDays": 365,"message": "Device Valid","resultCode": "GOOD"}'
         })
-    } else {
-        $done({})
-    }
 } else if ($request.url.indexOf('mb3admin.com/admin/service/registration/getStatus') != -1) {
     $done({
             status: 200,
