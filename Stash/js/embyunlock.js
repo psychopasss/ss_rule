@@ -1,6 +1,7 @@
-$response.setHeader('Access-Control-Allow-Origin', '*');
-$response.setHeader('Access-Control-Allow-Headers', '*');
-$response.setHeader('Access-Control-Allow-Method', '*');
+console.log("head ",$response.headers);
+$response.headers.add('Access-Control-Allow-Origin', '*');
+$response.headers.add('Access-Control-Allow-Headers', '*');
+$response.headers.add('Access-Control-Allow-Method', '*');
 if ($request.url.indexOf('mb3admin.com/admin/service/registration/validateDevice') != -1) {
     $notification.post("Done", "Success", "Emby Premiere Unlocked.");
     $done({
