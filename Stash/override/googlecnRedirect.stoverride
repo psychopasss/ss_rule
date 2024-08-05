@@ -6,7 +6,7 @@ http:
     - ^https?://(www.)?g.cn https://www.google.com 302
     - ^https?://(www.)?google.cn https://www.google.com 302
   force-http-engine:
-    - "*.google.cn:443"
+    - "*.google.cn"
     - "*.g.cn:443"
   mitm:
     - "*.google.cn"
