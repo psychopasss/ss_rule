@@ -1,11 +1,12 @@
-console.log("head "+JSON.stringify($response.headers));
+// console.log("head "+JSON.stringify($response.headers));
 $request.headers["Access-Control-Allow-Origin"] = "*";
 $request.headers["Access-Control-Allow-Headers"] = "*";
 $request.headers["Access-Control-Allow-Method"] = "*";
 $request.headers["Access-Control-Allow-Credentials"] = "true";
-console.log("head2 "+JSON.stringify($response.headers));
+// console.log("head2 "+JSON.stringify($response.headers));
 if ($request.url.indexOf('mb3admin.com/admin/service/registration/validateDevice') != -1) {
-    $notification.post("Done", "Success", "Emby Premiere Unlocked.");
+    console.log("Emby Premiere Unlocked.");
+    // $notification.post("Done", "Success", "Emby Premiere Unlocked.");
     $done({
         status: 200,
         headers: $response.headers,
