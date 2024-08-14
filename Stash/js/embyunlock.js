@@ -6,7 +6,7 @@ $request.headers["Access-Control-Allow-Credentials"] = "true";
 // console.log("head2 "+JSON.stringify($response.headers));
 if ($request.url.indexOf('mb3admin.com/admin/service/registration/validateDevice') != -1) {
     console.log("Emby Premiere Unlocked.");
-    // $notification.post("Done", "Success", "Emby Premiere Unlocked.");
+    $notification.post("Done", "Success", "Emby Premiere Unlocked.");
     $done({
         status: 200,
         headers: $response.headers,
